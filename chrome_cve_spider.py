@@ -15,7 +15,7 @@ class chrome_cve:
         self.user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36'
         self.headers = {'User-Agent': self.user_agent}
         #set request proxy
-        self.proxy_handler = urllib2.ProxyHandler( {"http":"web-proxyhk.oa.com:8080", "https":"web-proxyhk.oa.com:8080"} )
+        self.proxy_handler = urllib2.ProxyHandler( {"http":"**********", "https":"**********"} )
         self.opener = urllib2.build_opener(self.proxy_handler)
 	urllib2.install_opener(self.opener)
         #initial list to store archive pags
