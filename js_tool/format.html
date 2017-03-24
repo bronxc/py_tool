@@ -1,0 +1,52 @@
+<html>
+<body id='test'>
+<script>
+function Mem2Double(hiMem,loMem) {
+		
+		while(hiMem.length<8)
+		{
+			hiMem = '0' + hiMem;
+		}
+
+        var qword = loMem + hiMem;
+        // Bytes to bits
+        var bits = [],byte_bit = [],
+            str,s, e, f;
+		
+		ebits = 11;
+		fbits = 52;
+		sbits = 1;
+
+        str = parseInt(qword,16).toString(2);
+		while(str.length<64)
+        {
+            str = '0'+str;
+        }
+				
+		
+		s = parseInt(str.substring(0, 1), 2) ? -1 : 1;
+        e = parseInt(str.substring(1, 1 + ebits), 2);
+        f = parseInt(str.substring(1 + ebits), 2);
+        
+
+
+        // Produce number
+		 if (e === (1 << ebits) - 1) {
+            return f !== 0 ? NaN : s * Infinity;
+        } else if (e != 0) {
+            // Normalized
+            return s * Math.pow(2, e-1023) * (1 + f / Math.pow(2, fbits));
+        } else if (f !== 0) {
+            // Denormalized
+            return s * Math.pow(2, -1022) * (f / Math.pow(2, fbits));
+        } else {
+            return s < 0 ? -0 : 0;
+        }
+		
+}
+	
+vb = Mem2Double("10adbeef","4");
+</script>
+</body>
+
+</html>

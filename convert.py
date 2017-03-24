@@ -98,6 +98,12 @@ def convert_t2dw(src):
 	for x in dword_vec:
 		print '0x%0.8x' % x
 
+def convert_t2b(src, dst):
+        file_in = open(src, "rb")
+	file_out = open(dst, "wb")
+        while len()
+        file_in.close()
+	file_out.close()
 
 def main():
 	#src = input("src file path:")
