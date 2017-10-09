@@ -67,21 +67,24 @@ for( var cc = 0; cc < getRandomInt(1, 1000); cc++)
 
         switch(componentIndex)
         {
-                case 0:
-                        constructStart(builder)    // addStart(start_index) 
-                        break;
-                case 1:
-                        constructMemory(builder)  // addMemory(min, max, exported)  
-                        break;
-                case 2:
-                        constructExplicitSection(builder) // addExplicitSection(bytes)  anything you like 
-                        break;
-                case 3:
-                        constructCustomSection(builder) // addCustomSection(name, bytes)
-                        break;
-                case 4:
-                        constructType(builder) //addType(type)
-                        break;
+            case 0:
+                 constructStart(builder)    // addStart(start_index) 
+                break;
+            case 1:
+                constructMemory(builder)  // addMemory(min, max, exported)  
+                break;
+            case 2:
+                constructExplicitSection(builder) // addExplicitSection(bytes)  anything you like 
+                break;
+            case 3:
+                constructCustomSection(builder) // addCustomSection(name, bytes)
+                break;
+            case 4:
+                constructType(builder) //addType(type)
+                break;
+            case 5:
+
 
         }
 }
+
