@@ -128,6 +128,12 @@ function constructImport(self) {
         }
 }
 
+function constructExport(self) {
+    switch() {
+        case 0:
+    }
+}
+
 var builder = new WasmModuleBuilder();
 
 const globalTypes = [kWasmI32 , kWasmI64, kWasmF32, kWasmF64];  // Todo : wbGetGlobal
@@ -151,7 +157,6 @@ for( var cc = 0; cc < getRandomInt(1, 1000); cc++)
 
         switch(componentIndex)
         {
-<<<<<<< HEAD
                 case 0:
                         constructStart(builder)    // addStart(start_index) 
                         break;
@@ -176,26 +181,8 @@ for( var cc = 0; cc < getRandomInt(1, 1000); cc++)
                 case 7:
                         constructImport(builder)// addImport(module = "", name, type); addImportedGlobal(module = "", name, type); addImportedMemory(module = "", name, initial = 0, maximum); addImportedTable(module = "", name, initial, maximum)
                         break;
-=======
-            case 0:
-                 constructStart(builder)    // addStart(start_index) 
-                break;
-            case 1:
-                constructMemory(builder)  // addMemory(min, max, exported)  
-                break;
-            case 2:
-                constructExplicitSection(builder) // addExplicitSection(bytes)  anything you like 
-                break;
-            case 3:
-                constructCustomSection(builder) // addCustomSection(name, bytes)
-                break;
-            case 4:
-                constructType(builder) //addType(type)
-                break;
-            case 5:
-
-
->>>>>>> origin/master
+                case 8:
+                        constructExport(builder) 
+                        break;
         }
 }
-
